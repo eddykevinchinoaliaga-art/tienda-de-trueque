@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUEQUE ONLINE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="titulo-header">
+    <h1>TRUEQUE ONLINE</h1>
+  </div>
+
+  <div id="usuarioHeader">
+    <img id="fotoPerfilHeader" src="" alt="Foto de perfil">
+    <span id="nombreHeader"></span>
+    <button id="btnCerrarSesion">Cerrar sesión</button>
+  </div>
+
+  <div class="menu-buttons">
+    <button id="btnRegistro">Registro</button>
+    <button id="btnPublicar">Publicar</button>
+    <button id="btnReporte">Reporte</button>
+  </div>
+</header>
+<div id="modalRegistro" class="modal">
+  <div class="modal-content">
+    <span id="closeRegistro" class="close">&times;</span>
+    <h2>Registro de usuario</h2>
+    <form id="registroForm">
+      <label>Nombre de usuario:</label>
+      <input type="text" id="username" required>
+      <label>Teléfono:</label>
+      <input type="text" id="telefono" required>
+      <label>Contraseña:</label>
+      <input type="password" id="password" required>
+      <label>Carnet:</label>
+      <input type="text" id="carnet">
+      <label>Foto de perfil:</label>
+      <input type="file" id="fotoPerfil">
+      <p id="registroMensaje"></p>
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</div>
+<div id="modalPublicar" class="modal">
+  <div class="modal-content">
+    <span id="closePublicar" class="close">&times;</span>
+    <h2>Publicar Artículo</h2>
+    <form id="articuloForm">
+      <label>Título:</label>
+      <input type="text" id="titulo" required>
+      <label>Descripción:</label>
+      <textarea id="descripcion" required></textarea>
+      <label>Teléfono:</label>
+      <input type="text" id="telefonoArticulo" required>
+      <label>Estado:</label>
+      <select id="estado" required>
+        <option value="">Selecciona estado</option>
+        <option value="Nuevo">Nuevo</option>
+        <option value="Como nuevo">Como nuevo</option>
+        <option value="Buen estado">Buen estado</option>
+        <option value="Aceptable">Aceptable</option>
+      </select>
+      <label>Categoría:</label>
+      <select id="catalogo" required>
+        <option value="">Selecciona categoría</option>
+        <option value="Vehículo">Vehículo</option>
+        <option value="Muebles">Muebles</option>
+        <option value="Ropa">Ropa</option>
+        <option value="Accesorios">Accesorios</option>
+        <option value="Otros">Otros</option>
+      </select>
+      <label>Fotos:</label>
+      <input type="file" id="foto" multiple>
+      <div id="previewFotos"></div>
+      <button type="submit">Publicar</button>
+    </form>
+  </div>
+</div>
+<div id="modalIntercambio" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>Intercambio</h2>
+    <form id="intercambioForm">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" required>
+      <label>Teléfono:</label>
+      <input type="text" id="telefonoIntercambio" required>
+      <label>¿Qué cosa deseas cambiar?</label>
+      <input type="text" id="objetoIntercambio" placeholder="Ejemplo: una bicicleta, un reloj, etc." required>
+      <label>Estado del producto que deseas cambiar:</label>
+      <select id="estadoIntercambio" required>
+        <option value="">Selecciona el estado</option>
+        <option value="Nuevo">Nuevo</option>
+        <option value="Como nuevo">Como nuevo</option>
+        <option value="Buen estado">Buen estado</option>
+        <option value="Aceptable">Aceptable</option>
+      </select>
+       <label>Mensaje:</label>
+      <textarea id="mensaje" required></textarea>
+      <input type="file" id="imagenIntercambio">
+      <div id="previewIntercambio"></div>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal Reporte -->
+<div id="modalReporteCuenta" class="modal">
+  <div class="modal-content">
+    <span id="closeReporteCuenta" class="close">&times;</span>
+    <h2>Reporte de cuenta</h2>
+    <form id="reporteCuentaForm">
+      <label>Motivo:</label>
+      <textarea id="motivoReporteCuenta" required></textarea>
+      <label>Teléfono de usuario denunciado:</label>
+      <input type="text" id="telefonoDenunciado" required>
+      <label>Reportar cuenta:</label>
+      <input type="checkbox" id="reportarCuenta">
+      <label>Fotos (opcional):</label>
+      <input type="file" id="fotoReporteCuenta" multiple>
+      <div id="previewReporteCuenta"></div>
+      <button type="submit">Enviar reporte</button>
+    </form>
+  </div>
+</div>
+<div id="listaArticulos"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
